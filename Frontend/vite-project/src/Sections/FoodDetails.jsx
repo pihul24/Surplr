@@ -13,7 +13,7 @@ function FoodDetails() {
 
     axios
       axios
-  .get(`http://localhost:3000/food/getFood/${id}`)
+  .get(`http://surplr-backend.onrender.com/food/getFood/${id}`)
       .then((res) => {
         setFood(res.data.food);
       })
@@ -75,8 +75,8 @@ function FoodDetails() {
 
         <div>
 
-          <img
-            src={`http://localhost:3000/uploads/${food.image}`}
+          <imgsurplr-backend.onrender.com
+            src={`http:///uploads/${food.image}`}
             alt={food.title}
             className="rounded-3xl w-full h-[520px] object-cover"
           />

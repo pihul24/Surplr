@@ -38,7 +38,7 @@ import "swiper/css"
              const [searchTerm, setSearchTerm] = useState("");
 
              useEffect(() => {
-    axios.get("http://localhost:3000/food/getAvailableFood",
+    axios.get("http://surplr-backend.onrender.com/food/getAvailableFood",
             {
                 headers:{
                     Authorization : `Bearer ${token}`
@@ -209,7 +209,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://localhost:3000/uploads/${item.image}`}
+          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />
@@ -271,7 +271,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://localhost:3000/uploads/${item.image}`}
+          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />
@@ -336,7 +336,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://localhost:3000/uploads/${item.image}`}
+          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />

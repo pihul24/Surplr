@@ -52,7 +52,7 @@ function AddFood() {
 
                     console.log(formData);
                   const response = await axios.post(
-                  "http://localhost:3000/food/createFood",
+                  "http://surplr-backend.onrender.com/food/createFood",
                    data,
                 {
                   headers: {
