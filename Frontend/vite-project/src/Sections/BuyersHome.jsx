@@ -37,22 +37,21 @@ import "swiper/css"
 
              const [searchTerm, setSearchTerm] = useState("");
 
-             useEffect(() => {
-    axios.get("http://surplr-backend.onrender.com/food/getAvailableFood",
-            {
-                headers:{
-                    Authorization : `Bearer ${token}`
-                }
-            }
-        )
-
-        .then((response) => {
-            console.log(response.data);
-            setFood(response.data.food);
-            console.log(response.data.food);
-        })
-        .catch((error) => console.log(error));
+useEffect(() => {
+  axios
+    .get("https://surplr-backend.onrender.com/food/getAvailableFood", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((response) => {
+      console.log(response.data);
+      setFood(response.data.food);
+      console.log(response.data.food);
+    })
+    .catch((error) => console.log(error));
 }, []);
+
 
        const filteredFood = food.filter((item) => {
   const search = searchTerm.toLowerCase();
@@ -209,7 +208,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
+          src={`https://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />
@@ -271,7 +270,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
+          src={`https://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />
@@ -336,7 +335,7 @@ const searchResults =
     <SwiperSlide key={item._id} style={{ width: "350px" }}>
       <GlassCard className="w-[340px]">
         <img
-          src={`http://surplr-backend.onrender.com/uploads/${item.image}`}
+          src={`https://surplr-backend.onrender.com/uploads/${item.image}`}
           alt={item.title}
           className="w-full h-52 object-cover rounded-xl"
         />

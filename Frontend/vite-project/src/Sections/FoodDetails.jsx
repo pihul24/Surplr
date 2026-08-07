@@ -10,26 +10,19 @@ function FoodDetails() {
   const [food, setFood] = useState(null);
 
   useEffect(() => {
+  axios.get(`https://surplr-backend.onrender.com/food/getFood/${id}`)
+    .then((res) => {
+      setFood(res.data.food);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}, [id]);
 
-    axios
-      axios
-  .get(`http://surplr-backend.onrender.com/food/getFood/${id}`)
-      .then((res) => {
-        setFood(res.data.food);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-  }, [id]);
 
   if (!food) {
-    return (
-      <div className="min-h-screen bg-black text-white flex justify-center items-center text-3xl">
-        Loading...
-      </div>
-    );
-  }
+  return <div>Loading...</div>;
+}
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -75,11 +68,10 @@ function FoodDetails() {
 
         <div>
 
-          <imgsurplr-backend.onrender.com
-            src={`http:///uploads/${food.image}`}
-            alt={food.title}
-            className="rounded-3xl w-full h-[520px] object-cover"
-          />
+          <img
+    src={`https://surplr-backend.onrender.com/uploads/${food.image}`}
+    alt={food.title}
+    className="rounded-3xl w-full h-[520px] object-cover"/>
 
         </div>
 
